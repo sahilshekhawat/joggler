@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.WindowManager;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -27,6 +28,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerC
         mToolbar = (Toolbar) findViewById(R.id.toolbar_actionbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 
         //To Add Floating Action bar when we will have the listview ready.
         /*RecyclerView recyclerView = (RecyclerView) findViewById(android.R.id.list);

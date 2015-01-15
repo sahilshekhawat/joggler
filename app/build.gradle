@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 
+
 android {
     compileSdkVersion 21
     buildToolsVersion "21.1.2"
@@ -27,5 +28,6 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:21.0.0'
     androidTestCompile 'com.android.support.test.espresso:espresso-core:2.0'
     androidTestCompile 'com.android.support.test:testing-support-lib:0.1'
-    compile 'org.codehaus.jackson:jackson-core-lgpl:1.9.13'
 }
+
+
