@@ -1,12 +1,18 @@
 package project.is.joggler;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.google.android.gms.plus.PlusClient;
 
 
 public class MainActivity extends ActionBarActivity implements NavigationDrawerCallbacks {
@@ -23,9 +29,9 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerC
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         //To Add Floating Action bar when we will have the listview ready.
-/*        ListView listView = (ListView) findViewById(android.R.id.list);
+        /*RecyclerView recyclerView = (RecyclerView) findViewById(android.R.id.list);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.attachToListView(listView);*/
+        fab.attachToRecyclerView(recyclerView);*/
 
         mNavigationDrawerFragment = (NavigationDrawerFragment) getFragmentManager().findFragmentById(R.id.fragment_drawer);
         mNavigationDrawerFragment.setup(R.id.fragment_drawer, (DrawerLayout) findViewById(R.id.drawer), mToolbar);
@@ -34,7 +40,22 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerC
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
+
         return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        SignOut signOut = new SignOut(PlusBaseActivity.mPlusClient);
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.signOut:
+                signOut.signOut();
+                goBackToLogin();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     @Override
@@ -48,5 +69,10 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerC
             mNavigationDrawerFragment.closeDrawer();
         else
             super.onBackPressed();
+    }
+
+    public void goBackToLogin(){
+        Intent intent = new Intent(this, ActivityLogin.class);
+        startActivity(intent);
     }
 }

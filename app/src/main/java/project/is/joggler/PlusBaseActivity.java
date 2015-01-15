@@ -32,7 +32,7 @@ public abstract class PlusBaseActivity extends Activity
     public boolean mPlusClientIsConnecting = false;
 
     // This is the helper object that connects to Google Play Services.
-    private PlusClient mPlusClient;
+    public static PlusClient mPlusClient;
 
     // The saved result from {@link #onConnectionFailed(ConnectionResult)}.  If a connection
     // attempt has been made, this is non-null.

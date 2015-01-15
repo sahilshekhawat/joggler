@@ -3,8 +3,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/menu_search"
+        android:id="@+id/signOut"
         android:orderInCategory="1"
+        android:title="Sign Out"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/menu_search"
+        android:orderInCategory="2"
         android:title="Menu item"
         app:showAsAction="never"/>
 </menu>
