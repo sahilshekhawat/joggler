@@ -17,6 +17,6 @@
     <color name="myNavigationColor">#000000</color>
     <color name="material_blue_500">#5677fc</color>
     <color name="material_blue_600">#4e6cef</color>
-
+    <color name="material_green_500">#4caf50</color>
     <color name="selected_gray">#ffdbdbdb</color>
 </resources>

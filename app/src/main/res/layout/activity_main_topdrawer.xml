@@ -35,10 +35,13 @@
             android:clickable="true"
             android:layout_height="match_parent">
 
-            <ListView
-                android:id="@android:id/list"
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/listView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:dividerHeight="10dp"
+                android:layout_marginTop="10dp"
+                android:divider="@android:color/transparent"/>
 
             <project.is.joggler.FloatingActionButton
                 android:id="@+id/fab"
@@ -46,12 +49,15 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|right"
                 android:layout_margin="16dp"
+                android:background="@android:color/transparent"
                 android:src="@drawable/fab_icon"
                 fab:fab_colorNormal="@color/material_blue_500"
                 fab:fab_colorPressed="@color/material_blue_600"
                 fab:fab_colorRipple="@color/material_blue_grey_800"
                 fab:fab_type="mini"/>
+
         </FrameLayout>
+
     </LinearLayout>
     <!-- android:layout_marginTop="?android:attr/actionBarSize"-->
 
