@@ -42,8 +42,20 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerC
         ArrayList<MainActivityListItem> mainActivityList = new ArrayList<MainActivityListItem>();
         MainActivityListItem mainActivityListItem1 = new MainActivityListItem("Love Songs");
         MainActivityListItem mainActivityListItem2 = new MainActivityListItem("Dancing all night");
+        MainActivityListItem mainActivityListItem3 = new MainActivityListItem("Mood");
+        MainActivityListItem mainActivityListItem4 = new MainActivityListItem("Party");
+        MainActivityListItem mainActivityListItem5 = new MainActivityListItem("Classic");
+        MainActivityListItem mainActivityListItem6 = new MainActivityListItem("Romantic");
+        MainActivityListItem mainActivityListItem7 = new MainActivityListItem("Dancing all night");
+        MainActivityListItem mainActivityListItem8 = new MainActivityListItem("Love Songs");
         mainActivityList.add(mainActivityListItem1);
         mainActivityList.add(mainActivityListItem2);
+        mainActivityList.add(mainActivityListItem3);
+        mainActivityList.add(mainActivityListItem4);
+        mainActivityList.add(mainActivityListItem5);
+        mainActivityList.add(mainActivityListItem6);
+        mainActivityList.add(mainActivityListItem7);
+        mainActivityList.add(mainActivityListItem8);
         MainActivityListAdapter listAdapter = new MainActivityListAdapter(this, mainActivityList);
         mRecycleView.setAdapter(listAdapter);
         //To Add Floating Action bar when we will have the listview ready.
@@ -54,7 +66,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerC
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getBaseContext(), MapsActivity.class);
+                Intent intent = new Intent(getBaseContext(), UploadSong.class);
                 startActivity(intent);
             }
         });
